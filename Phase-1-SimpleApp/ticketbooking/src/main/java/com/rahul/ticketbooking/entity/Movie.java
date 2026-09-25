@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "events")
 @Getter
 @Setter
-public class Event {
+public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -20,7 +20,7 @@ public class Show {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "event_id")
-    private Event event;
+    private Movie event;
 
     @Column(name = "show_time")
     private LocalDateTime showTime;
