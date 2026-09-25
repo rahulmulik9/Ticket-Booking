@@ -19,7 +19,7 @@ public class Show {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "event_id")
+    @JoinColumn(name = "movie_id")
     private Movie movie;
 
     @Column(name = "show_time")
