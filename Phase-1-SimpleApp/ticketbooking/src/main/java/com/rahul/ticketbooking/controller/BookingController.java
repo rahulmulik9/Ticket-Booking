@@ -23,4 +23,9 @@ public class BookingController {
     public Booking getBooking(@PathVariable Long id) {
         return bookingService.getBookingById(id);
     }
+
+    @PatchMapping("/bookings/{id}/cancel")
+    public Booking cancelBooking(@PathVariable Long id) {
+        return bookingService.cancelBooking(id);
+    }
 }
