@@ -64,4 +64,22 @@ public class BookingService {
         return bookingRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Booking not found with id: " + id));
     }
+
+
+    public Booking cancelBooking(Long id) {
+        Booking booking = getBookingById(id);
+
+        if (booking.getStatus() == BookingStatus.CANCELLED) {
+            throw new RuntimeException("Booking " + id + " is already cancelled");
+        }
+
+        booking.setStatus(BookingStatus.CANCELLED);
+
+        for (Seat seat : booking.getSeats()) {
+            seat.setStatus(SeatStatus.AVAILABLE);
+        }
+
+        seatRepository.saveAll(booking.getSeats());
+        return bookingRepository.save(booking);
+    }
 }
