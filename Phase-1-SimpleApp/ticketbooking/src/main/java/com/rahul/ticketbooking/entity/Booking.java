@@ -40,6 +40,7 @@ public class Booking {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    //learn about join column
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "booking_seats",
