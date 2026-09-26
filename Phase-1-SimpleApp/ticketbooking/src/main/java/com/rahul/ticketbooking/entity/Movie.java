@@ -25,6 +25,6 @@ public class Movie {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private List<Show> shows = new ArrayList<>();
 }
